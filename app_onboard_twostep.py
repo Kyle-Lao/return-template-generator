@@ -27,7 +27,7 @@ if st.session_state.step == 1:
     with st.form("step1_form"):
         st.subheader("Step 1: Policy Information")
         insured_name = st.text_input("Insured’s Full Name")
-        dob = st.date_input("Date of Birth")
+        dob = st.date_input("Date of Birth", min_value=date(1900, 1, 1), max_value=date.today())
         carrier = st.text_input("Carrier Name")
         le_months = st.number_input("Life Expectancy at Report Generation (months)", min_value=1, step=1)
         le_report_date = st.date_input("LE Report Generation Date")
